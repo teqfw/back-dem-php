@@ -10,5 +10,7 @@ namespace TeqFw\Lib\Dem;
 
 class Config
 {
-
+    const KEY_DATA = '.dat';
+    /** Path separator in DEM. */
+    const PS = '/';
 }
