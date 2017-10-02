@@ -1,6 +1,6 @@
 {
   "DEM": {
-    ".dat": "/vendor/module",
+    ".dat": "vendor/module",
     "user": {
       ".dat": {
         "desc": "User data.",

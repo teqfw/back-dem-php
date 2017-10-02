@@ -39,9 +39,10 @@ class Parse
         $decoded = json_decode($json);
         $dem = $decoded->DEM;
 
+        /* parse root nodes of the DEM (path data & root branches) */
         foreach ($dem as $key => $item) {
             if ($key == Cfg::KEY_DATA) {
-                $path = $this->toolPath->normalize($item);  // use path from DEM
+                $path = $this->toolPath->normalizeRoot($item);  // use path from DEM
             } else {
                 $branch = $item;
                 $outEntities[] = $branch;
