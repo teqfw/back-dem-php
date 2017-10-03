@@ -10,15 +10,16 @@ use \TeqFw\Lib\Dem\Config as Cfg;
 class Path
 {
     /**
-     * Normalize root path (add leading path separator if missed).
+     * Normalize root path (lower case, trim, add leading path separator if missed).
      *
-     * @param string $path 'path/to/branch'
+     * @param string $path ' pAth/To/branch '
      * @return string '/path/to/branch'
      */
     public function normalizeRoot(string $path): string
     {
-        $firstChar = substr($path, 0, 1);
-        $result = ($firstChar != Cfg::PS) ? Cfg::PS . $path : $path;
+        $result = trim(strtolower($path));
+        $firstChar = substr($result, 0, 1);
+        $result = ($firstChar != Cfg::PS) ? Cfg::PS . $result : $result;
         return $result;
     }
 }

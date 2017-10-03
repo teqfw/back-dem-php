@@ -6,9 +6,13 @@
 namespace TeqFw\Lib\Dem;
 
 /**
- * TODO: move to \TeqFw\Lib\Base
+ * Process to parse DEM json
  */
 interface IParse
     extends \TeqFw\Lib\Dem\IProcess
 {
+    /** string JSON formatted DEM */
+    const IN_JSON = 'json';
+    /** array */
+    const OUT_ENTITIES = 'entities';
 }

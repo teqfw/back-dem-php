@@ -8,12 +8,9 @@ namespace TeqFw\Lib\Dem;
 use \TeqFw\Lib\Dem\Config as Cfg;
 
 class Parse
-    implements \TeqFw\Lib\Dem\IProcess
+    implements \TeqFw\Lib\Dem\IParse
 {
-    /** string JSON formatted DEM */
-    const IN_JSON = 'json';
-    /** array */
-    const OUT_ENTITIES = 'entities';
+
     /** @var \TeqFw\Lib\Dem\Tool\Path */
     private $toolPath;
 
@@ -41,7 +38,7 @@ class Parse
 
         /* parse root nodes of the DEM (path data & root branches) */
         foreach ($dem as $key => $item) {
-            if ($key == Cfg::KEY_DATA) {
+            if ($key == Cfg::A_DATA) {
                 $path = $this->toolPath->normalizeRoot($item);  // use path from DEM
             } else {
                 $branch = $item;
