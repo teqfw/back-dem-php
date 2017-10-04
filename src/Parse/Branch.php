@@ -47,7 +47,7 @@ class Branch
             foreach ($branch as $key => $item) {
                 if ($key == Cfg::A_DATA) {
                     /* parse entity data */
-                    $entity = $this->parseEntity($item);
+                    $table = $this->parseEntity($pathCur, $item);
                 } else {
                     $inSub = new \Flancer32\Lib\Data();
                     $inSub->set(self::IN_PATH, $pathCur);
@@ -63,9 +63,16 @@ class Branch
         return $result;
     }
 
-    private function parseEntity($item)
+    private function parseEntity($path, $item)
     {
-        $result = new \stdClass();
+        /* perform processing */
+        $name = $this->toolPath->toName($path);
+        $comment = $item->{Cfg::A_ENTITY_DESC};
+
+        /* prepare output vars */
+        $result = new \TeqFw\Lib\Dem\Data\Db\Table();
+        $result->name = $name;
+        $result->comment = $comment;
         return $result;
     }
 }

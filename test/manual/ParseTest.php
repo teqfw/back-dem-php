@@ -20,9 +20,24 @@ class ParseTest
         $json = $this->loadJson();
         $in->set(Process::IN_JSON, $json);
         $out = $proc->exec($in);
-        $entities = $out->get(Process::OUT_ENTITIES);
-        $this->assertTrue(true, 'Not ran.');
+        $schema = $out->get(Process::OUT_SCHEMA);
+        $this->build($schema);
+        $this->assertTrue(true);
 
+    }
+
+    private function build($db)
+    {
+        $config = new \Doctrine\DBAL\Configuration();
+        $connectionParams = array(
+            'url' => 'mysql://www:v8JBejI8Moyfrn7ldh02@localhost/dem',
+        );
+        $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+        $conn->connect();
+        $sm = $conn->getSchemaManager();
+        $schema = $sm->createSchema();
+        print_r($schema);
+        $conn->close();
     }
 
     private function loadJson(): string

@@ -22,4 +22,22 @@ class Path
         $result = ($firstChar != Cfg::PS) ? Cfg::PS . $result : $result;
         return $result;
     }
+
+    /**
+     * Convert path to entity (DEM) into the table name (DB).
+     *
+     * @param string $path '/path/to/branch'
+     * @return string 'path_to_branch'
+     */
+    public function toName(string $path): string
+    {
+        $result = trim(strtolower($path));
+        $firstChar = substr($result, 0, 1);
+        if ($firstChar == Cfg::PS) {
+            $length = strlen($result);
+            $result = substr($result, 1, $length);
+        }
+        $result = str_replace(Cfg::PS, Cfg::NS, $result);
+        return $result;
+    }
 }
