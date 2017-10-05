@@ -28,11 +28,7 @@ class ParseTest
 
     private function build($db)
     {
-        $config = new \Doctrine\DBAL\Configuration();
-        $connectionParams = array(
-            'url' => 'mysql://www:v8JBejI8Moyfrn7ldh02@localhost/dem',
-        );
-        $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
+        $conn = $this->getContainer()->get(\Doctrine\DBAL\Connection::class);
         $conn->connect();
         $sm = $conn->getSchemaManager();
         $schema = $sm->createSchema();

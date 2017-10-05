@@ -3,7 +3,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Test\Parse\Branch;
+namespace TeqFw\Lib\Dem\Test\Parse;
 
 use \Flancer32\Lib\Data as Data;
 use \TeqFw\Lib\Dem\Parse\Branch as Process;
