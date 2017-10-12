@@ -9,7 +9,7 @@ namespace TeqFw\Lib\Dem\Data\Db;
  * Structure to describe Database table (not DEM entity).
  */
 class Table
-    extends \TeqFw\Lib\Base\Data
+    extends \TeqFw\Lib\Data
 {
     public $attributes;
     /**

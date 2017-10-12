@@ -7,7 +7,7 @@ namespace TeqFw\Lib\Dem\Data\Entity;
 
 
 class Relation
-    extends \TeqFw\Lib\Base\Data
+    extends \TeqFw\Lib\Data
 {
 
 }

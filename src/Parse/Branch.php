@@ -28,7 +28,7 @@ class Branch
         $this->toolPath = $toolPath;
     }
 
-    public function exec(\TeqFw\Lib\Base\Data $in): \TeqFw\Lib\Base\Data
+    public function exec(\TeqFw\Lib\Data $in): \TeqFw\Lib\Data
     {
         /* get working data from input */
         $pathRoot = $in->get(self::IN_PATH);
@@ -49,7 +49,7 @@ class Branch
                     /* parse entity data */
                     $table = $this->parseEntity($pathCur, $item);
                 } else {
-                    $inSub = new \TeqFw\Lib\Base\Data();
+                    $inSub = new \TeqFw\Lib\Data();
                     $inSub->set(self::IN_PATH, $pathCur);
                     $inSub->set(self::IN_NAME, $key);
                     $inSub->set(self::IN_BRANCH, $item);
@@ -58,7 +58,7 @@ class Branch
             }
         }
         /* put result data into output */
-        $result = new \TeqFw\Lib\Base\Data();
+        $result = new \TeqFw\Lib\Data();
         $result->set(self::OUT_ENTITIES, $out);
         return $result;
     }

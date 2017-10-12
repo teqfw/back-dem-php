@@ -1,7 +1,7 @@
 {
-  "name": "teqfw/dem-php",
-  "description": "PHP tools to use DEM.",
-  "homepage": "https://github.com/teqfw/dem-php",
+  "name": "teqfw/back-dem-php",
+  "description": "DEM module for TeqFW.",
+  "homepage": "https://github.com/teqfw/back-dem-php",
   "license": "BSD-2-Clause",
   "authors": [
     {
@@ -11,22 +11,30 @@
   ],
   "autoload": {
     "psr-4": {
-      "TeqFw\\Lib\\Test\\": "test/fw",
       "TeqFw\\Lib\\Dem\\": "src"
     }
   },
-  "require-dev": {
-    "phpunit/phpunit": "^6.3",
-    "league/container": "^2.4"
-  },
   "require": {
+    "php": "^7.0",
     "doctrine/dbal": "^2.5",
-    "teqfw/base-php": "dev-master"
+    "teqfw/back-data-php": "dev-master",
+    "teqfw/back-proc-php": "dev-master"
+  },
+  "require-dev": {
+    "teqfw/back-test-php": "dev-master"
   },
   "repositories": {
-    "teqfw-base": {
+    "teqfw/back-data-php": {
       "type": "vcs",
-      "url": "https://github.com/teqfw/base-php"
+      "url": "https://github.com/teqfw/back-data-php"
+    },
+    "teqfw/back-proc-php": {
+      "type": "vcs",
+      "url": "https://github.com/teqfw/back-proc-php"
+    },
+    "teqfw/back-test-php": {
+      "type": "vcs",
+      "url": "https://github.com/teqfw/back-test-php"
     }
   }
 }

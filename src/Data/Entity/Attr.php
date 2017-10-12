@@ -7,7 +7,7 @@ namespace TeqFw\Lib\Dem\Data\Entity;
 
 
 class Attr
-    extends \TeqFw\Lib\Base\Data
+    extends \TeqFw\Lib\Data
 {
 
 }

@@ -22,7 +22,7 @@ class Parse
     }
 
 
-    public function exec(\TeqFw\Lib\Base\Data $in): \TeqFw\Lib\Base\Data
+    public function exec(\TeqFw\Lib\Data $in): \TeqFw\Lib\Data
     {
         /* get working data from input */
         $json = $in->get(self::IN_JSON);
@@ -47,7 +47,7 @@ class Parse
         }
 
         /* put result data into output */
-        $result = new \TeqFw\Lib\Base\Data();
+        $result = new \TeqFw\Lib\Data();
         return $result;
     }
 }
