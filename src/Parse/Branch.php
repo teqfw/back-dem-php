@@ -8,7 +8,7 @@ namespace TeqFw\Lib\Dem\Parse;
 use \TeqFw\Lib\Dem\Config as Cfg;
 
 class Branch
-    implements \TeqFw\Lib\Base\IProcess
+    implements \TeqFw\Lib\IProcess
 {
     /** string Root path to the current branch */
     const IN_PATH = 'path';
