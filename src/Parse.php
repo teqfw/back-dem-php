@@ -22,7 +22,7 @@ class Parse
     }
 
 
-    public function exec(\Flancer32\Lib\Data $in): \Flancer32\Lib\Data
+    public function exec(\TeqFw\Lib\Base\Data $in): \TeqFw\Lib\Base\Data
     {
         /* get working data from input */
         $json = $in->get(self::IN_JSON);
@@ -47,7 +47,7 @@ class Parse
         }
 
         /* put result data into output */
-        $result = new \Flancer32\Lib\Data();
+        $result = new \TeqFw\Lib\Base\Data();
         return $result;
     }
 }

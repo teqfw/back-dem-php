@@ -8,7 +8,7 @@ namespace TeqFw\Lib\Dem\Parse;
 use \TeqFw\Lib\Dem\Config as Cfg;
 
 class Branch
-    implements \TeqFw\Lib\Dem\IProcess
+    implements \TeqFw\Lib\Base\IProcess
 {
     /** string Root path to the current branch */
     const IN_PATH = 'path';
@@ -28,7 +28,7 @@ class Branch
         $this->toolPath = $toolPath;
     }
 
-    public function exec(\Flancer32\Lib\Data $in): \Flancer32\Lib\Data
+    public function exec(\TeqFw\Lib\Base\Data $in): \TeqFw\Lib\Base\Data
     {
         /* get working data from input */
         $pathRoot = $in->get(self::IN_PATH);
@@ -49,7 +49,7 @@ class Branch
                     /* parse entity data */
                     $table = $this->parseEntity($pathCur, $item);
                 } else {
-                    $inSub = new \Flancer32\Lib\Data();
+                    $inSub = new \TeqFw\Lib\Base\Data();
                     $inSub->set(self::IN_PATH, $pathCur);
                     $inSub->set(self::IN_NAME, $key);
                     $inSub->set(self::IN_BRANCH, $item);
@@ -58,7 +58,7 @@ class Branch
             }
         }
         /* put result data into output */
-        $result = new \Flancer32\Lib\Data();
+        $result = new \TeqFw\Lib\Base\Data();
         $result->set(self::OUT_ENTITIES, $out);
         return $result;
     }

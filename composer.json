@@ -21,6 +21,12 @@
   },
   "require": {
     "doctrine/dbal": "^2.5",
-    "flancer32/php_data_object": "^0.2.1"
+    "teqfw/base-php": "dev-master"
+  },
+  "repositories": {
+    "teqfw-base": {
+      "type": "vcs",
+      "url": "https://github.com/teqfw/base-php"
+    }
   }
 }

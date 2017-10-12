@@ -7,7 +7,7 @@ namespace TeqFw\Lib\Dem\Data\Entity;
 
 
 class Index
-    extends \Flancer32\Lib\Data
+    extends \TeqFw\Lib\Base\Data
 {
 
 }

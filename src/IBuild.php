@@ -9,7 +9,7 @@ namespace TeqFw\Lib\Dem;
  * Process to build DB.
  */
 interface IBuild
-    extends \TeqFw\Lib\Dem\IProcess
+    extends \TeqFw\Lib\Base\IProcess
 {
     /** string Database schema (parsed DEM JSON */
     const IN_SCHEMA = 'schema';

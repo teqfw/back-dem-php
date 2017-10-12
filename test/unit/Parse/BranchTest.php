@@ -5,7 +5,7 @@
 
 namespace TeqFw\Lib\Dem\Test\Parse;
 
-use \Flancer32\Lib\Data as Data;
+use \TeqFw\Lib\Base\Data as Data;
 use \TeqFw\Lib\Dem\Parse\Branch as Process;
 use \TeqFw\Lib\Dem\Config as Cfg;
 

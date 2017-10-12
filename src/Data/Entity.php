@@ -13,7 +13,7 @@ namespace TeqFw\Lib\Dem\Data;
  * @property array $relation attributes array
  */
 class Entity
-    extends \Flancer32\Lib\Data
+    extends \TeqFw\Lib\Base\Data
 {
 
 }

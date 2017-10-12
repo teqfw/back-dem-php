@@ -14,7 +14,7 @@ namespace TeqFw\Lib\Dem\Data\Cfg;
  *
  */
 class Db
-    extends \TeqFw\Lib\Dem\Data
+    extends \TeqFw\Lib\Base\Data
 {
     public $dbname;
     public $driver;
