@@ -6,11 +6,11 @@
 namespace TeqFw\Lib\Dem;
 
 
-use TeqFw\Lib\Base\Data as Data;
-use \TeqFw\Lib\Dem\Parse as Process;
+use TeqFw\Lib\Data as Data;
+use TeqFw\Lib\Dem\Parse as Process;
 
 class ParseTest
-    extends \TeqFw\Lib\Test\TestCase
+    extends \TeqFw\Lib\Test\Dem\TestCase
 {
     public function testExec()
     {

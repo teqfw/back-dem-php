@@ -6,7 +6,7 @@
 namespace TeqFw\Lib\Dem\Test\Arc;
 
 use \TeqFw\Lib\Dem\Data\Cfg\Db as DCfgDb;
-use \TeqFw\Lib\Dem\Arch\ConnectionBuilder as Builder;
+use \TeqFw\Lib\Dem\Arc\ConnectionBuilder as Builder;
 
 class ConnectionBuilderTest
     extends \TeqFw\Lib\Test\TestCase

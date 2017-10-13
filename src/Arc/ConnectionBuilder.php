@@ -3,7 +3,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Arch;
+namespace TeqFw\Lib\Dem\Arc;
 
 /**
  * Build database connection and place it into the Container.

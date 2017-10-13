@@ -1,2 +1,2 @@
 <?php
-echo "Her ewe are.";
+/** Bootstrap code for tests */
