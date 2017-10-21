@@ -3,11 +3,11 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Test\Parse;
+namespace Test\TeqFw\Lib\Dem\Fun\Act\Parse;
 
 use \TeqFw\Lib\Data as Data;
-use \TeqFw\Lib\Dem\Parse\Branch as Process;
-use \TeqFw\Lib\Dem\Config as Cfg;
+use \TeqFw\Lib\Dem\Fun\Act\Parse\Branch as Process;
+use \TeqFw\Lib\Dem\Api\Config as Cfg;
 
 class BranchTest
     extends \TeqFw\Lib\Test\TestCase

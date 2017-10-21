@@ -3,11 +3,15 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Tool;
+namespace TeqFw\Lib\Dem\Fun\Util;
 
-use \TeqFw\Lib\Dem\Config as Cfg;
+use \TeqFw\Lib\Dem\Api\Config as Cfg;
 
+/**
+ * Functionality to operate with DEM paths.
+ */
 class Path
+    implements \TeqFw\Lib\Dem\Api\Fun\Util\Path
 {
     /**
      * Normalize root path (lower case, trim, add leading path separator if missed).

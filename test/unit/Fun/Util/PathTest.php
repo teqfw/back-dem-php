@@ -3,7 +3,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Test;
+namespace Test\TeqFw\Lib\Dem\Fun\Util;
 
 
 class PathTest
@@ -11,16 +11,16 @@ class PathTest
 {
     public function testNormalizeRoot()
     {
-        /** @var \TeqFw\Lib\Dem\Tool\Path $obj */
-        $obj = $this->getContainer()->get(\TeqFw\Lib\Dem\Tool\Path::class);
+        /** @var \TeqFw\Lib\Dem\Fun\Util\Path $obj */
+        $obj = $this->getContainer()->get(\TeqFw\Lib\Dem\Fun\Util\Path::class);
         $res = $obj->normalizeRoot(' pAth/tO/Branch ');
         $this->assertEquals('/path/to/branch', $res);
     }
 
     public function testToName()
     {
-        /** @var \TeqFw\Lib\Dem\Tool\Path $obj */
-        $obj = $this->getContainer()->get(\TeqFw\Lib\Dem\Tool\Path::class);
+        /** @var \TeqFw\Lib\Dem\Fun\Util\Path $obj */
+        $obj = $this->getContainer()->get(\TeqFw\Lib\Dem\Fun\Util\Path::class);
         $res = $obj->toName('/path/to/branch');
         $this->assertEquals('path_to_branch', $res);
     }

@@ -5,7 +5,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem;
+namespace TeqFw\Lib\Dem\Api;
 
 
 class Config

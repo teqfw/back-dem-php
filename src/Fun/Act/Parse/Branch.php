@@ -3,9 +3,9 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Parse;
+namespace TeqFw\Lib\Dem\Fun\Act\Parse;
 
-use \TeqFw\Lib\Dem\Config as Cfg;
+use \TeqFw\Lib\Dem\Api\Config as Cfg;
 
 class Branch
     implements \TeqFw\Lib\IProcess
@@ -18,11 +18,11 @@ class Branch
     const IN_BRANCH = 'branch';
     const OUT_ENTITIES = 'entities';
 
-    /** @var \TeqFw\Lib\Dem\Tool\Path */
+    /** @var \TeqFw\Lib\Dem\Fun\Util\Path */
     private $toolPath;
 
     public function __construct(
-        \TeqFw\Lib\Dem\Tool\Path $toolPath
+        \TeqFw\Lib\Dem\Fun\Util\Path $toolPath
     )
     {
         $this->toolPath = $toolPath;

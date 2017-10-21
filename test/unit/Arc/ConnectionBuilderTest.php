@@ -3,7 +3,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Test\Arc;
+namespace Test\TeqFw\Lib\Dem\Arc;
 
 use \TeqFw\Lib\Dem\Data\Cfg\Db as DCfgDb;
 use \TeqFw\Lib\Dem\Arc\ConnectionBuilder as Builder;

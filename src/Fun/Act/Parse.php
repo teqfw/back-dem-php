@@ -3,26 +3,28 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem;
+namespace TeqFw\Lib\Dem\Fun\Act;
 
-use \TeqFw\Lib\Dem\Config as Cfg;
+use \TeqFw\Lib\Dem\Api\Config as Cfg;
+use TeqFw\Lib\Dem\Api\Fun\Act\Parse\Data\Request as Request;
+use TeqFw\Lib\Dem\Api\Fun\Act\Parse\Data\Response as Response;
 
 class Parse
-    implements \TeqFw\Lib\Dem\IParse
+    implements \TeqFw\Lib\Dem\Api\Fun\Act\Parse
 {
 
-    /** @var \TeqFw\Lib\Dem\Tool\Path */
+    /** @var \TeqFw\Lib\Dem\Fun\Util\Path */
     private $toolPath;
 
     public function __construct(
-        \TeqFw\Lib\Dem\Tool\Path $toolPath
+        \TeqFw\Lib\Dem\Fun\Util\Path $toolPath
     )
     {
         $this->toolPath = $toolPath;
     }
 
 
-    public function exec(\TeqFw\Lib\Data $in): \TeqFw\Lib\Data
+    public function exec(Request $in): Response
     {
         /* get working data from input */
         $json = $in->get(self::IN_JSON);

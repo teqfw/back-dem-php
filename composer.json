@@ -16,7 +16,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "TeqFw\\Lib\\Test\\Dem\\": "test/arch"
+      "TeqFw\\Lib\\Test\\Dem\\": "test/arc"
     }
   },
   "require": {
