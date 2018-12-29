@@ -22,8 +22,7 @@
   "require": {
     "php": "^7.0",
     "doctrine/dbal": "^2.5",
-    "teqfw/back-data-php": "dev-master",
-    "teqfw/back-proc-php": "dev-master"
+    "teqfw/back-data-php": "dev-master"
   },
   "require-dev": {
     "teqfw/back-test-php": "dev-master"
