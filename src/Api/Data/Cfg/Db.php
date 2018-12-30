@@ -1,9 +1,10 @@
 <?php
 /**
- * User: Alex Gusev <alex@flancer64.com>
+ * Authors: Alex Gusev <alex@flancer64.com>
+ * Since: 2018
  */
 
-namespace TeqFw\Lib\Dem\Data\Cfg;
+namespace TeqFw\Lib\Dem\Api\Data\Cfg;
 
 /**
  * Database connection configuration.

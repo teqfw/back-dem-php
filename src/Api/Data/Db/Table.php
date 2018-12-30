@@ -3,7 +3,7 @@
  * User: Alex Gusev <alex@flancer64.com>
  */
 
-namespace TeqFw\Lib\Dem\Data\Db;
+namespace TeqFw\Lib\Dem\Api\Data\Db;
 
 /**
  * Structure to describe Database table (not DEM entity).

@@ -2,8 +2,7 @@
 
 ## Folders and files
 
-* **./Api/**: application level API;
-* **./Arc/**: application(???) level infrastructure;
+* **./Api/**: module's public API;
 * **./Data/**: module level data structures;
 * **./Proc/**: module level processes;
 * **./Serv/**: module level services;

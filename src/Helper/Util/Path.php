@@ -1,17 +1,17 @@
 <?php
 /**
- * User: Alex Gusev <alex@flancer64.com>
+ * Authors: Alex Gusev <alex@flancer64.com>
+ * Since: 2018
  */
 
-namespace TeqFw\Lib\Dem\Fun\Util;
+namespace TeqFw\Lib\Dem\Helper\Util;
 
-use \TeqFw\Lib\Dem\Api\Config as Cfg;
+use TeqFw\Lib\Dem\Api\Config as Cfg;
 
 /**
  * Functionality to operate with DEM paths.
  */
 class Path
-    implements \TeqFw\Lib\Dem\Api\Fun\Util\Path
 {
     /**
      * Normalize root path (lower case, trim, add leading path separator if missed).
