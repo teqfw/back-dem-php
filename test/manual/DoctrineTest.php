@@ -181,7 +181,7 @@ LEFT JOIN e_user_a_password as p ON
     {
         $di = $this->initDi();
         /** @var \TeqFw\Lib\Dem\Connection $conn */
-        $conn = $di->get(\TeqFw\Lib\Dem\Connection::class);
+        $conn = $di->get(\TeqFw\Lib\Dem\Api\Connection::class);
         $conn->beginTransaction();
         /** @var \Doctrine\DBAL\Schema\AbstractSchemaManager $man */
         $man = $conn->getSchemaManager();

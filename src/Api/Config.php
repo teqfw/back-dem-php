@@ -1,8 +1,11 @@
 <?php
 /**
- * Module configuration.
+ * Module's public configuration (hardcoded parameters).
  *
- * User: Alex Gusev <alex@flancer64.com>
+ * TODO: split these constants to private & public
+ *
+ * Authors: Alex Gusev <alex@flancer64.com>
+ * Since: 2017
  */
 
 namespace TeqFw\Lib\Dem\Api;

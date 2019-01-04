@@ -1,7 +1,7 @@
 <?php
-
 /**
- * User: Alex Gusev <alex@flancer64.com>
+ * Authors: Alex Gusev <alex@flancer64.com>
+ * Since: 2018
  */
 
 namespace TeqFw\Lib\Dem\Api;
@@ -37,9 +37,9 @@ class ConnectionBuilder
         $config = new \Doctrine\DBAL\Configuration();
         $connectionParams = (array)$in;
         $connectionParams['wrapperClass'] = \TeqFw\Lib\Dem\Connection::class;
-        /** @var  $conn */
+        /** @var \TeqFw\Lib\Dem\Connection $conn */
         $conn = \Doctrine\DBAL\DriverManager::getConnection($connectionParams, $config);
-        $this->container->add(\TeqFw\Lib\Dem\Connection::class, $conn, true);
+        $this->container->add(\TeqFw\Lib\Dem\Api\Connection::class, $conn, true);
         $this->container->add(\Doctrine\DBAL\Connection::class, $conn, true);
         $this->container->add(\Doctrine\DBAL\Driver\Connection::class, $conn, true);
     }

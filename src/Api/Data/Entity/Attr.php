@@ -19,18 +19,15 @@ class Attr
      */
     public $name;
     /**
-     * @var string @see \TeqFw\Lib\Dem\Helper\Parser\Config::ATTR_TYPE_...
-     */
-    public $type;
-    /**
      * @var int
      */
     public $precision;
     /**
-     * 'true' - this column will be primary key (unsigned int with autoincrement).
-     * A lot of PK are integers, so 'Identity' is a typical ID column.
-     *
-     * @var bool
+     * @var int
      */
-    public $isIdentity = false;
+    public $scale;
+    /**
+     * @var string @see \TeqFw\Lib\Dem\Helper\Parser\Config::ATTR_TYPE_...
+     */
+    public $type;
 }

@@ -8,9 +8,10 @@ namespace TeqFw\Lib\Dem;
 
 
 /**
- * Library wrapper for database connection.
+ * Module's wrapper for database connection (Doctrine based).
  */
 class Connection
     extends \Doctrine\DBAL\Connection
+    implements \TeqFw\Lib\Dem\Api\Connection
 {
 }
