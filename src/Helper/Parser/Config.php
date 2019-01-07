@@ -15,6 +15,7 @@ interface Config
     const ATTR_TYPE_BINARY = 'binary';
     const ATTR_TYPE_BOOLEAN = 'boolean';
     const ATTR_TYPE_DATETIME = 'datetime';
+    const ATTR_TYPE_IDENTITY = 'identity';
     const ATTR_TYPE_INTEGER = 'integer';
     const ATTR_TYPE_NUMERIC = 'numeric';
     const ATTR_TYPE_OPTION = 'option';

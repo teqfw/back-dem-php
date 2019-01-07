@@ -12,27 +12,33 @@ use TeqFw\Lib\Dem\Api\Config as Cfg;
  * Functionality to operate with DEM paths.
  */
 class Path
+    implements \TeqFw\Lib\Dem\Api\Helper\Util\Path
 {
-    /**
-     * Normalize root path (lower case, trim, add leading path separator if missed).
-     *
-     * @param string $path ' pAth/To/branch '
-     * @return string '/path/to/branch'
-     */
-    public function normalizeRoot(string $path): string
+
+    public function normalizeAttribute(string $name): string
     {
-        $result = trim(strtolower($path));
+        $result = trim(strtolower($name));
+        return $result;
+    }
+
+    public function normalizeRoot(string $path, $namespace = null): string
+    {
+        /* concatenate NS & path */
+        $normPath = trim(strtolower($path));
+        $normNs = trim(strtolower($namespace));
+        $result = $normNs . Cfg::PS . $normPath;
+        /* replace all "//" with "/" */
+        $search = Cfg::PS . Cfg::PS;
+        $replace = Cfg::PS;
+        do {
+            str_replace($search, $replace, $result, $count);
+        } while ($count > 0);
+        /* add leading "/" if missed */
         $firstChar = substr($result, 0, 1);
         $result = ($firstChar != Cfg::PS) ? Cfg::PS . $result : $result;
         return $result;
     }
 
-    /**
-     * Convert path to entity (DEM) into the table name (DB).
-     *
-     * @param string $path '/path/to/branch'
-     * @return string 'path_to_branch'
-     */
     public function toName(string $path): string
     {
         $result = trim(strtolower($path));
