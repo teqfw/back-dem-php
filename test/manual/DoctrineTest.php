@@ -167,9 +167,9 @@ LEFT JOIN e_user_a_password as p ON
         /* create DI container */
         $result = \TeqFw\Lib\Di\Api\ContainerFactory::getContainer();
         /* init DB connection */
-        $dbCfg = new \TeqFw\Lib\Dem\Api\Data\Cfg\Db();
+        $dbCfg = new \TeqFw\Lib\Db\Api\Data\Cfg\Db();
         $dbCfg->url = 'mysql://www:R9QfcvqSfpcYlIoaYCRx@localhost/dem';
-        $result->add(\TeqFw\Lib\Dem\Api\Data\Cfg\Db::class, $dbCfg, true);
+        $result->add(\TeqFw\Lib\Db\Api\Data\Cfg\Db::class, $dbCfg, true);
         /** @var \TeqFw\Lib\Dem\Api\ConnectionBuilder $connBuilder */
         $connBuilder = $result->get(\TeqFw\Lib\Dem\Api\ConnectionBuilder::class);
         $connBuilder->build($dbCfg);
@@ -180,8 +180,8 @@ LEFT JOIN e_user_a_password as p ON
     public function testTable()
     {
         $di = $this->initDi();
-        /** @var \TeqFw\Lib\Dem\Connection $conn */
-        $conn = $di->get(\TeqFw\Lib\Dem\Api\Connection::class);
+        /** @var \TeqFw\Lib\Db\Api\Connection\Schema $conn */
+        $conn = $di->get(\TeqFw\Lib\Db\Api\Connection\Schema::class);
         $conn->beginTransaction();
         /** @var \Doctrine\DBAL\Schema\AbstractSchemaManager $man */
         $man = $conn->getSchemaManager();

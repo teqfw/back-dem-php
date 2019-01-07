@@ -1,6 +1,6 @@
 {
   "name": "teqfw/back-dem-php",
-  "description": "Domain Entities Map (DEM) module Tequila Framework (PHP).",
+  "description": "Domain Entities Map (DEM) module for Tequila Framework (PHP).",
   "homepage": "https://github.com/teqfw/back-dem-php",
   "license": "GPL-3.0-only",
   "authors": [
@@ -22,20 +22,7 @@
   "require": {
     "php": "^7",
     "doctrine/dbal": "^2.5",
-    "teqfw/back-data-php": "dev-master",
+    "teqfw/back-db-php": "dev-master",
     "zendframework/zend-db": "^2"
-  },
-  "require-dev": {
-    "teqfw/back-test-php": "dev-master"
-  },
-  "repositories": {
-    "teqfw/back-data-php": {
-      "type": "vcs",
-      "url": "https://github.com/teqfw/back-data-php"
-    },
-    "teqfw/back-test-php": {
-      "type": "vcs",
-      "url": "https://github.com/teqfw/back-test-php"
-    }
   }
 }
