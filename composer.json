@@ -14,15 +14,7 @@
       "TeqFw\\Lib\\Dem\\": "src"
     }
   },
-  "autoload-dev": {
-    "psr-4": {
-      "TeqFw\\Lib\\Test\\Dem\\": "test/arc"
-    }
-  },
   "require": {
-    "php": "^7",
-    "doctrine/dbal": "^2.5",
-    "teqfw/back-db-php": "dev-master",
-    "zendframework/zend-db": "^2"
+    "teqfw/back-db-php": "dev-master"
   }
 }
