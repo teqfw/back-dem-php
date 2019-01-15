@@ -21,7 +21,7 @@ interface Config
     const A_ENTITY_RELATION = 'relation';
     /** Names parts separator in DB. */
     const NS = '_';
-    /** Path separator in DEM. */
+    /** Path separator for namespaces (DEM JSON). */
     const PS = '/';
 
     /**

@@ -37,8 +37,8 @@ class DoctrineTest
         $attrLat = new \TeqFw\Lib\Dem\Api\Data\Entity\Attr();
         $attrLat->name = 'latitude';
         $attrLat->desc = 'Latitude for POI.';
-        $attrLat->type = ParserCfg::ATTR_TYPE_NUMERIC;
-        $attrLat->type = ParserCfg::ATTR_TYPE_NUMERIC;
+        $attrLat->type = ParserCfg::ATTR_TYPE_DECIMAL;
+        $attrLat->type = ParserCfg::ATTR_TYPE_DECIMAL;
         $result->attrs [] = $attrLat;
 
         return $result;

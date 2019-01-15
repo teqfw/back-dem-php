@@ -6,7 +6,7 @@
 
 namespace TeqFw\Lib\Dem\Helper\Util;
 
-use TeqFw\Lib\Dem\Api\Config as Cfg;
+use TeqFw\Lib\Dem\Config as Cfg;
 
 /**
  * Functionality to operate with DEM paths.
@@ -31,7 +31,7 @@ class Path
         $search = Cfg::PS . Cfg::PS;
         $replace = Cfg::PS;
         do {
-            str_replace($search, $replace, $result, $count);
+            $result = str_replace($search, $replace, $result, $count);
         } while ($count > 0);
         /* add leading "/" if missed */
         $firstChar = substr($result, 0, 1);

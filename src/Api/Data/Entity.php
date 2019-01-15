@@ -35,6 +35,11 @@ class Entity
      */
     public $name;
     /**
+     * Full path to the entity ('/path/to/entity').
+     * @var string
+     */
+    public $path;
+    /**
      * @var \TeqFw\Lib\Dem\Api\Data\Entity\Relation[]
      */
     public $relations = [];
