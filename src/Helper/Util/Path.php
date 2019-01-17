@@ -21,12 +21,29 @@ class Path
         return $result;
     }
 
+    /**
+     * 'true' if $path starts with '/'.
+     *
+     * @param string $path
+     * @return bool
+     */
+    private function isPathAbsolute(string $path): bool
+    {
+        $firstChar = substr($path, 0, 1);
+        $result = ($firstChar == Cfg::PS);
+        return $result;
+    }
     public function normalizeRoot(string $path, $namespace = null): string
     {
         /* concatenate NS & path */
         $normPath = trim(strtolower($path));
         $normNs = trim(strtolower($namespace));
-        $result = $normNs . Cfg::PS . $normPath;
+        $isAbsolute = $this->isPathAbsolute($normPath);
+        if ($isAbsolute) {
+            $result = $normPath;
+        } else {
+            $result = $normNs . Cfg::PS . $normPath;
+        }
         /* replace all "//" with "/" */
         $search = Cfg::PS . Cfg::PS;
         $replace = Cfg::PS;

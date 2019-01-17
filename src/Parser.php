@@ -64,7 +64,7 @@ class Parser
                 $path = $this->hlpPath->normalizeRoot($name, $namespace);
                 $entities = $this->parseBranch($node, $path);
                 if (count($entities))
-                    $results[] = $entities;
+                    $results = array_merge($results, $entities);
             }
         }
         return $results;
@@ -82,10 +82,10 @@ class Parser
                 $result->attrs = $this->parseAttributes($data);
             } elseif ($node == Cfg::JSON_NODE_ENTITY_INDEX) {
                 /* parse indexes */
-                $result->indexes = [];
+                $result->indexes = $this->parseIndexes($data);
             } elseif ($node == Cfg::JSON_NODE_ENTITY_RELATION) {
                 /* parse relations */
-                $result->relations = [];
+                $result->relations = $this->parseRelations($data, $namespace);
             }
         }
         return $result;
@@ -112,6 +112,54 @@ class Parser
             $entities = $this->parseBranch($data, $path);
             if (count($entities))
                 $result->items = array_merge($result->items, $entities);
+        }
+        return $result;
+    }
+
+    private function parseIndexes(array $indexes)
+    {
+        $result = [];
+        foreach ($indexes as $key => $one) {
+            if (
+                isset($one[Cfg::JSON_NODE_INDEX_TYPE]) &&
+                isset($one[Cfg::JSON_NODE_INDEX_ATTRS])
+            ) {
+                $type = $one[Cfg::JSON_NODE_INDEX_TYPE];
+                $attrs = $one[Cfg::JSON_NODE_INDEX_ATTRS];
+                $index = new \TeqFw\Lib\Dem\Api\Data\Entity\Index();
+                $index->type = $type;
+                $index->attrs = $attrs;
+                $result[] = $index;
+            }
+        }
+        return $result;
+    }
+
+    /**
+     * @param array $relations
+     * @param string $namespace
+     * @return \TeqFw\Lib\Dem\Api\Data\Entity\Relation[]
+     */
+    private function parseRelations(array $relations, string $namespace)
+    {
+        $result = [];
+        foreach ($relations as $one) {
+            $path = $one[Cfg::JSON_NODE_RELATION_PATH];
+            $fullPath = $this->hlpPath->normalizeRoot($path, $namespace);
+            $ownAttrs = $one[Cfg::JSON_NODE_RELATION_OWN];
+            $foreignAttrs = $one[Cfg::JSON_NODE_RELATION_FOREIGN];
+            $relation = new \TeqFw\Lib\Dem\Api\Data\Entity\Relation();
+            $relation->pathToForeign = $fullPath;
+            $relation->ownAttrs = $ownAttrs;
+            $relation->foreignAttrs = $foreignAttrs;
+            if (isset($one[Cfg::JSON_NODE_RELATION_ON])) {
+                $actions = $one[Cfg::JSON_NODE_RELATION_ON];
+                if (isset($actions[Cfg::JSON_NODE_RELATION_ON_DELETE]))
+                    $relation->onDelete = $actions[Cfg::JSON_NODE_RELATION_ON_DELETE];
+                if (isset($actions[Cfg::JSON_NODE_RELATION_ON_UPDATE]))
+                    $relation->onUpdate = $actions[Cfg::JSON_NODE_RELATION_ON_UPDATE];
+            }
+            $result[] = $relation;
         }
         return $result;
     }

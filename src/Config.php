@@ -20,4 +20,12 @@ interface Config
     const JSON_NODE_ENTITY_DESC = 'desc';
     const JSON_NODE_ENTITY_INDEX = 'index';
     const JSON_NODE_ENTITY_RELATION = 'relation';
+    const JSON_NODE_INDEX_ATTRS = 'attrs';
+    const JSON_NODE_INDEX_TYPE = 'type';
+    const JSON_NODE_RELATION_FOREIGN = 'foreign';
+    const JSON_NODE_RELATION_ON = 'on';
+    const JSON_NODE_RELATION_ON_DELETE = 'delete';
+    const JSON_NODE_RELATION_ON_UPDATE = 'update';
+    const JSON_NODE_RELATION_OWN = 'own';
+    const JSON_NODE_RELATION_PATH = 'path';
 }
