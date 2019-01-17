@@ -13,7 +13,7 @@ namespace TeqFw\Lib\Dem\Api\Helper\Ddl;
 interface Entity
 {
     /**
-     * Create entity table and attributes tables.
+     * Create DB structures for entity and related attributes.
      *
      * @param \Doctrine\DBAL\Schema\Schema $schema
      * @param \TeqFw\Lib\Dem\Api\Data\Entity $entity
