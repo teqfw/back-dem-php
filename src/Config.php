@@ -12,6 +12,11 @@ namespace TeqFw\Lib\Dem;
 interface Config
     extends \TeqFw\Lib\Dem\Api\Config
 {
+    /** Names parts separator in DB. */
+    const NS = '_';
+    /** Path separator for namespaces (DEM JSON). */
+    const PS = '/';
+
     const JSON_NODE_ATTR_DESC = 'desc';
     const JSON_NODE_ATTR_TYPE = 'type';
     const JSON_NODE_DEM = 'DEM';
