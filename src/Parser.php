@@ -48,6 +48,9 @@ class Parser
                 $attr->desc = $one[Cfg::JSON_NODE_ATTR_DESC];
             if (isset($one[Cfg::JSON_NODE_ATTR_TYPE]))
                 $attr->type = $this->normalizeAttrType($one[Cfg::JSON_NODE_ATTR_TYPE]);
+            if (isset($one[Cfg::JSON_NODE_ATTR_DEFAULT]))
+                $attr->default = $one[Cfg::JSON_NODE_ATTR_DEFAULT];
+
             $result[$name] = $attr;
         }
         return $result;

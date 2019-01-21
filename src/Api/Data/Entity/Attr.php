@@ -11,6 +11,10 @@ class Attr
     extends \TeqFw\Lib\Data
 {
     /**
+     * @var string Default value for the attribute.
+     */
+    public $default;
+    /**
      * @var string Description (columns's comment).
      */
     public $desc;
