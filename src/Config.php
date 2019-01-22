@@ -14,6 +14,7 @@ interface Config
 {
     const JSON_NODE_ATTR_DEFAULT = 'default';
     const JSON_NODE_ATTR_DESC = 'desc';
+    const JSON_NODE_ATTR_NOT_NULL = 'not_null';
     const JSON_NODE_ATTR_TYPE = 'type';
 
     const JSON_NODE_DEM = 'DEM';

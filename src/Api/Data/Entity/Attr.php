@@ -27,6 +27,10 @@ class Attr
      */
     public $precision;
     /**
+     * @var bool
+     */
+    public $not_null;
+    /**
      * @var int
      */
     public $scale;
