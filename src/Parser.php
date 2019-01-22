@@ -44,14 +44,19 @@ class Parser
         foreach ($attrs as $name => $one) {
             $attr = new \TeqFw\Lib\Dem\Api\Data\Entity\Attr();
             $attr->name = $this->normalizeName($name);
-            if (isset($one[Cfg::JSON_NODE_ATTR_DESC]))
-                $attr->desc = $one[Cfg::JSON_NODE_ATTR_DESC];
-            if (isset($one[Cfg::JSON_NODE_ATTR_TYPE]))
-                $attr->type = $this->normalizeAttrType($one[Cfg::JSON_NODE_ATTR_TYPE]);
+
             if (isset($one[Cfg::JSON_NODE_ATTR_DEFAULT]))
                 $attr->default = $one[Cfg::JSON_NODE_ATTR_DEFAULT];
-            if (isset($one[Cfg::JSON_NODE_ATTR_NOT_NULL]))
-                $attr->not_null = $one[Cfg::JSON_NODE_ATTR_NOT_NULL];
+            if (isset($one[Cfg::JSON_NODE_ATTR_DESC]))
+                $attr->desc = $one[Cfg::JSON_NODE_ATTR_DESC];
+            if (isset($one[Cfg::JSON_NODE_ATTR_NULLABLE]))
+                $attr->nullable = $one[Cfg::JSON_NODE_ATTR_NULLABLE];
+            if (isset($one[Cfg::JSON_NODE_ATTR_PRECISION]))
+                $attr->precision = $one[Cfg::JSON_NODE_ATTR_PRECISION];
+            if (isset($one[Cfg::JSON_NODE_ATTR_SCALE]))
+                $attr->scale = $one[Cfg::JSON_NODE_ATTR_SCALE];
+            if (isset($one[Cfg::JSON_NODE_ATTR_TYPE]))
+                $attr->type = $this->normalizeAttrType($one[Cfg::JSON_NODE_ATTR_TYPE]);
 
             $result[$name] = $attr;
         }
@@ -96,6 +101,25 @@ class Parser
         return $result;
     }
 
+    private function parseIndexes(array $indexes)
+    {
+        $result = [];
+        foreach ($indexes as $key => $one) {
+            if (
+                isset($one[Cfg::JSON_NODE_INDEX_TYPE]) &&
+                isset($one[Cfg::JSON_NODE_INDEX_ATTRS])
+            ) {
+                $type = $one[Cfg::JSON_NODE_INDEX_TYPE];
+                $attrs = $one[Cfg::JSON_NODE_INDEX_ATTRS];
+                $index = new \TeqFw\Lib\Dem\Api\Data\Entity\Index();
+                $index->type = $type;
+                $index->attrs = $attrs;
+                $result[] = $index;
+            }
+        }
+        return $result;
+    }
+
     public function parseJson(string $json): \TeqFw\Lib\Dem\Api\Data\EntityCollection
     {
         $result = new \TeqFw\Lib\Dem\Api\Data\EntityCollection();
@@ -117,25 +141,6 @@ class Parser
             $entities = $this->parseBranch($data, $path);
             if (count($entities))
                 $result->items = array_merge($result->items, $entities);
-        }
-        return $result;
-    }
-
-    private function parseIndexes(array $indexes)
-    {
-        $result = [];
-        foreach ($indexes as $key => $one) {
-            if (
-                isset($one[Cfg::JSON_NODE_INDEX_TYPE]) &&
-                isset($one[Cfg::JSON_NODE_INDEX_ATTRS])
-            ) {
-                $type = $one[Cfg::JSON_NODE_INDEX_TYPE];
-                $attrs = $one[Cfg::JSON_NODE_INDEX_ATTRS];
-                $index = new \TeqFw\Lib\Dem\Api\Data\Entity\Index();
-                $index->type = $type;
-                $index->attrs = $attrs;
-                $result[] = $index;
-            }
         }
         return $result;
     }

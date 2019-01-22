@@ -29,7 +29,7 @@ class Attr
     /**
      * @var bool
      */
-    public $not_null;
+    public $nullable;
     /**
      * @var int
      */
