@@ -49,6 +49,8 @@ class Parser
                 $attr->default = $one[Cfg::JSON_NODE_ATTR_DEFAULT];
             if (isset($one[Cfg::JSON_NODE_ATTR_DESC]))
                 $attr->desc = $one[Cfg::JSON_NODE_ATTR_DESC];
+            if (isset($one[Cfg::JSON_NODE_ATTR_LENGTH]))
+                $attr->length = $one[Cfg::JSON_NODE_ATTR_LENGTH];
             if (isset($one[Cfg::JSON_NODE_ATTR_NULLABLE]))
                 $attr->nullable = $one[Cfg::JSON_NODE_ATTR_NULLABLE];
             if (isset($one[Cfg::JSON_NODE_ATTR_PRECISION]))
