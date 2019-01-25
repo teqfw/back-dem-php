@@ -22,20 +22,18 @@ class Attr
      * @var string Name of the attribute.
      */
     public $name;
-    /**
-     * @var int
-     */
-    public $precision;
-    /**
-     * @var bool
-     */
+    /** @var bool */
     public $nullable;
-    /**
-     * @var int
-     */
+    /** @var int */
+    public $precision;
+    /** @var int */
     public $scale;
+    /** @var bool */
+    public $small;
     /**
      * @var string @see \TeqFw\Lib\Dem\Helper\Parser\Config::ATTR_TYPE_...
      */
     public $type;
+    /** @var bool */
+    public $unsigned;
 }

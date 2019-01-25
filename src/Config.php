@@ -17,7 +17,9 @@ interface Config
     const JSON_NODE_ATTR_NULLABLE = 'nullable';
     const JSON_NODE_ATTR_PRECISION = 'precision';
     const JSON_NODE_ATTR_SCALE = 'scale';
+    const JSON_NODE_ATTR_SMALL = 'small';
     const JSON_NODE_ATTR_TYPE = 'type';
+    const JSON_NODE_ATTR_UNSIGNED = 'unsigned';
 
     const JSON_NODE_DEM = 'DEM';
     const JSON_NODE_DOT = '.';

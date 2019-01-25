@@ -55,8 +55,12 @@ class Parser
                 $attr->precision = $one[Cfg::JSON_NODE_ATTR_PRECISION];
             if (isset($one[Cfg::JSON_NODE_ATTR_SCALE]))
                 $attr->scale = $one[Cfg::JSON_NODE_ATTR_SCALE];
+            if (isset($one[Cfg::JSON_NODE_ATTR_SMALL]))
+                $attr->small = $one[Cfg::JSON_NODE_ATTR_SMALL];
             if (isset($one[Cfg::JSON_NODE_ATTR_TYPE]))
                 $attr->type = $this->normalizeAttrType($one[Cfg::JSON_NODE_ATTR_TYPE]);
+            if (isset($one[Cfg::JSON_NODE_ATTR_UNSIGNED]))
+                $attr->unsigned = $this->normalizeAttrType($one[Cfg::JSON_NODE_ATTR_UNSIGNED]);
 
             $result[$name] = $attr;
         }
