@@ -180,8 +180,8 @@ LEFT JOIN e_user_a_password as p ON
     public function testTable()
     {
         $di = $this->initDi();
-        /** @var \TeqFw\Lib\Db\Api\Connection\Schema $conn */
-        $conn = $di->get(\TeqFw\Lib\Db\Api\Connection\Schema::class);
+        /** @var \TeqFw\Lib\Db\Api\Connection\Main $conn */
+        $conn = $di->get(\TeqFw\Lib\Db\Api\Connection\Main::class);
         $conn->beginTransaction();
         /** @var \Doctrine\DBAL\Schema\AbstractSchemaManager $man */
         $man = $conn->getSchemaManager();
