@@ -72,15 +72,17 @@ class Parser
     private function parseBranch($branch, $namespace)
     {
         $results = [];
-        foreach ($branch as $name => $node) {
-            if ($name == Cfg::JSON_NODE_DOT) {
-                $entity = $this->parseEntity($node, $namespace);
-                $results[] = $entity;
-            } else {
-                $path = $this->hlpPath->normalizeRoot($name, $namespace);
-                $entities = $this->parseBranch($node, $path);
-                if (count($entities))
-                    $results = array_merge($results, $entities);
+        if (is_array($branch)) {
+            foreach ($branch as $name => $node) {
+                if ($name == Cfg::JSON_NODE_DOT) {
+                    $entity = $this->parseEntity($node, $namespace);
+                    $results[] = $entity;
+                } else {
+                    $path = $this->hlpPath->normalizeRoot($name, $namespace);
+                    $entities = $this->parseBranch($node, $path);
+                    if (count($entities))
+                        $results = array_merge($results, $entities);
+                }
             }
         }
         return $results;
